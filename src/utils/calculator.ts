@@ -10,3 +10,7 @@ export function timeToSeconds(time: string) {
   const timeSides = time.split(":");
   return Number(timeSides[0]) * 60 + Number(timeSides[1]);
 }
+
+export function calculateRounds(input: CalcVariables) {
+  let restSeconds = timeToSeconds(input.Rest);
+}
