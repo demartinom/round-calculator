@@ -7,8 +7,8 @@ export interface CalcVariables {
 
 // Takes a time such as 1:20 and converts it to seconds
 export function timeToSeconds(time: string) {
-  const timeSides = time.split(":");
-  return Number(timeSides[0]) * 60 + Number(timeSides[1]);
+  const [m, s] = time.split(":");
+  return Number(m) * 60 + Number(s);
 }
 
 export function calculateRounds(input: CalcVariables) {
