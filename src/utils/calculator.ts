@@ -1,5 +1,5 @@
 // Stores user inputs
-interface CalcVariables {
+export interface CalcVariables {
   Rounds: number;
   Times: string[];
   Rest: string;
