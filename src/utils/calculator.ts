@@ -1,8 +1,8 @@
 // Stores user inputs
 interface CalcVariables {
-  rounds: number;
-  times: number[];
-  rest: number;
+  Rounds: number;
+  Times: string[];
+  Rest: string;
 }
 
 // Takes a time such as 1:20 and converts it to seconds
