@@ -12,5 +12,12 @@ export function timeToSeconds(time: string) {
 }
 
 export function calculateRounds(input: CalcVariables) {
-  let restSeconds = timeToSeconds(input.Rest);
+  const restSeconds = timeToSeconds(input.Rest);
+  const calculatedTimes: number[] = [];
+
+  for (let i = 0; i < input.Rounds; i++) {
+    const e = timeToSeconds(input.Times[i]);
+    calculatedTimes.push(e - restSeconds * i);
+  }
+  return calculatedTimes;
 }
