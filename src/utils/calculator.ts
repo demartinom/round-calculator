@@ -14,10 +14,14 @@ export function timeToSeconds(time: string) {
 export function calculateRounds(input: CalcVariables) {
   const restSeconds = timeToSeconds(input.Rest);
   const calculatedTimes: number[] = [];
+  let workTime = 0;
 
   for (let i = 0; i < input.Rounds; i++) {
     const e = timeToSeconds(input.Times[i]);
-    calculatedTimes.push(e - restSeconds * i);
+    const roundTime = e - workTime - (i !== 0 ? restSeconds : 0);
+    calculatedTimes.push(roundTime);
+    workTime = e;
   }
+
   return calculatedTimes;
 }
