@@ -9,6 +9,12 @@ function App() {
     setRoundTimes(Array(rounds).fill("00:00"));
   }, [rounds]);
 
+  const Times = roundTimes.map((e, i) => (
+    <div key={i}>
+      <RoundTime />
+    </div>
+  ));
+
   return (
     <>
       <input
@@ -19,6 +25,7 @@ function App() {
           setRounds(Number(e.target.value));
         }}
       />
+      {Times}
     </>
   );
 }
