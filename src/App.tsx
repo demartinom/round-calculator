@@ -36,6 +36,7 @@ function App() {
         onChange={(e) => {
           setRounds(Number(e.target.value));
         }}
+        value={rounds}
       />
       <p>Enter your cumulative time after each round</p>
       {Times}
