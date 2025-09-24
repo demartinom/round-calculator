@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { RoundTime } from "./components/TimeInput";
+import { RestTime } from "./components/RestTime";
+
 import "./styles/App.css";
 
 function App() {
   const [rounds, setRounds] = useState(1);
   const [roundTimes, setRoundTimes] = useState<string[]>([]);
+  const [restTime, setRestTime] = useState<string>("02:00");
 
   // Used for setting state of specific round time
   const timeUpdate = (index: number, newTime: string) => {
@@ -34,6 +37,7 @@ function App() {
         }}
       />
       {Times}
+      <RestTime rest={restTime} updateRest={setRestTime} />
     </>
   );
 }
