@@ -25,9 +25,10 @@ function App() {
       <RoundTime updateTime={timeUpdate} time={e} index={i} />
     </div>
   ));
+
   return (
-    <>
-      {/* Setter for number of rounds */}
+    <div>
+      <p>How many rounds did you do?</p>
       <input
         type="number"
         name="Rounds"
@@ -36,9 +37,11 @@ function App() {
           setRounds(Number(e.target.value));
         }}
       />
+      <p>Enter your cumulative time after each round</p>
       {Times}
+      <p>Update your rest time</p>
       <RestTime rest={restTime} updateRest={setRestTime} />
-    </>
+    </div>
   );
 }
 
