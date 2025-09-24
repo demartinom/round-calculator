@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { RoundTime } from "./components/timeInput";
+import { RoundTime } from "./components/TimeInput";
 import "./styles/App.css";
+
 function App() {
   const [rounds, setRounds] = useState(1);
   const [roundTimes, setRoundTimes] = useState<string[]>([]);
