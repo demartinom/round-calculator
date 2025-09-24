@@ -10,17 +10,18 @@ function App() {
   const timeUpdate = (index: number, newTime: string) => {
     setRoundTimes((prev) => prev.map((t, i) => (i === index ? newTime : t)));
   };
+
   // Updates length of rounds based on user input
   useEffect(() => {
     setRoundTimes(Array(rounds).fill("00:00"));
   }, [rounds]);
 
+  // Entry for rounds. Length decided by rounds state
   const Times = roundTimes.map((e, i) => (
     <div key={i}>
-      <RoundTime />
+      <RoundTime updateTime={timeUpdate} time={e} index={i} />
     </div>
   ));
-
   return (
     <>
       {/* Setter for number of rounds */}
