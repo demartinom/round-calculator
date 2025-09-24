@@ -37,6 +37,7 @@ function App() {
           setRounds(Number(e.target.value));
         }}
         value={rounds}
+        min={1}
       />
       <p>Enter your cumulative time after each round</p>
       {Times}
