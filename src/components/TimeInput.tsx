@@ -1,14 +1,19 @@
 import { InputMask } from "@react-input/mask";
-import { useState } from "react";
 
-export const RoundTime = () => {
-  const [time, setTime] = useState("00:00");
+type RoundTimeProps = {
+  updateTime: (index: number, newTime: string) => void;
+  time: string;
+  index: number;
+};
+
+export const RoundTime = ({ updateTime, time, index }: RoundTimeProps) => {
   return (
     <InputMask
       mask="__:__"
       replacement={{ _: /\d/ }}
       placeholder="mm:ss"
-      onChange={(e) => setTime(e.target.value)}
+      onChange={(e) => updateTime(index, e.target.value)}
+      value={time}
     />
   );
 };
