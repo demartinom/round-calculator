@@ -20,9 +20,9 @@ function App() {
   }, [rounds]);
 
   // Entry for rounds. Length decided by rounds state
-  const Times = roundTimes.map((e, i) => (
+  const Times = roundTimes.map((_, i) => (
     <div key={i}>
-      <RoundTime updateTime={timeUpdate} time={e} index={i} />
+      <RoundTime updateTime={timeUpdate} index={i} />
     </div>
   ));
 
