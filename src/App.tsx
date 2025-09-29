@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { RoundTime } from "./components/TimeInput";
 import { RestTime } from "./components/RestTime";
-
 import { calculateRounds } from "./utils/calculator";
 import type { CalcVariables } from "./utils/calculator";
 import "./styles/App.css";
@@ -38,6 +37,12 @@ function App() {
     };
     setRoundTotals(calculateRounds(roundData));
   };
+
+  const results = roundTotals.map((roundTime, i) => (
+    <div>
+      Round{i + 1}: {roundTime}
+    </div>
+  ));
   return (
     <div>
       <p>How many rounds did you do?</p>
@@ -56,6 +61,7 @@ function App() {
       <p>Update your rest time</p>
       <RestTime rest={restTime} updateRest={setRestTime} />
       <button onClick={handleCalculate}>calculate</button>
+      {results}
     </div>
   );
 }
