@@ -1,4 +1,4 @@
-import { timeToSeconds, calculateRounds } from "./calculator";
+import { timeToSeconds, calculateRounds, secondsToMinutes } from "./calculator";
 import type { CalcVariables } from "./calculator";
 import { test, expect } from "vitest";
 
@@ -15,7 +15,11 @@ const calcTestInterface: CalcVariables = {
   Times: ["1:19", "4:30", "7:40", "10:52"],
   Rest: "2:00",
 };
-
+//test outdated
 test("convert cumulative times into their round times in seconds", () => {
   expect(calculateRounds(calcTestInterface)).toStrictEqual([79, 71, 70, 72]);
+});
+
+test('should convert 220 into "03:40"', () => {
+  expect(secondsToMinutes(220)).toEqual("03:40");
 });
