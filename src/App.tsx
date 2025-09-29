@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { RoundTime } from "./components/TimeInput";
 import { RestTime } from "./components/RestTime";
 
+import { calculateRounds } from "./utils/calculator";
+import type { CalcVariables } from "./utils/calculator";
 import "./styles/App.css";
 
 function App() {
   const [rounds, setRounds] = useState(1);
   const [roundTimes, setRoundTimes] = useState<string[]>([]);
   const [restTime, setRestTime] = useState<string>("02:00");
+  const [roundTotals, setRoundTotals] = useState<string[]>([]);
 
   // Used for setting state of specific round time
   const timeUpdate = (index: number, newTime: string) => {
@@ -26,6 +29,15 @@ function App() {
     </div>
   ));
 
+  const handleCalculate = () => {
+    setRoundTotals([]);
+    const roundData: CalcVariables = {
+      Rounds: rounds,
+      Times: roundTimes,
+      Rest: restTime,
+    };
+    setRoundTotals(calculateRounds(roundData));
+  };
   return (
     <div>
       <p>How many rounds did you do?</p>
