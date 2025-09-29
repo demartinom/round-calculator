@@ -11,6 +11,15 @@ export function timeToSeconds(time: string) {
   return Number(m) * 60 + Number(s);
 }
 
+export function secondsToMinutes(time: number): string {
+  if (time < 60) {
+    return `0:${time}`;
+  }
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+  return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+}
+
 export function calculateRounds(input: CalcVariables) {
   const restSeconds = timeToSeconds(input.Rest);
   const calculatedTimes: number[] = [];
