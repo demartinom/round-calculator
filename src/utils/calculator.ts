@@ -22,13 +22,13 @@ export function secondsToMinutes(time: number): string {
 
 export function calculateRounds(input: CalcVariables) {
   const restSeconds = timeToSeconds(input.Rest);
-  const calculatedTimes: number[] = [];
+  const calculatedTimes: string[] = [];
   let workTime = 0;
 
   for (let i = 0; i < input.Rounds; i++) {
     const e = timeToSeconds(input.Times[i]);
     const roundTime = e - workTime - (i !== 0 ? restSeconds : 0);
-    calculatedTimes.push(roundTime);
+    calculatedTimes.push(secondsToMinutes(roundTime));
     workTime = e;
   }
 
