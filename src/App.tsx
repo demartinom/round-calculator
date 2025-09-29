@@ -55,6 +55,7 @@ function App() {
       {Times}
       <p>Update your rest time</p>
       <RestTime rest={restTime} updateRest={setRestTime} />
+      <button onClick={handleCalculate}>calculate</button>
     </div>
   );
 }
