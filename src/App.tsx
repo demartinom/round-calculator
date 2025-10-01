@@ -47,7 +47,7 @@ function App() {
     <div className="mt-4 flex flex-col items-center p-2 text-center">
       <p className="text-center text-2xl">How many rounds did you do?</p>
       <input
-        type="number"
+        type="tel"
         name="Rounds"
         id="RoundNums"
         onChange={(e) => {

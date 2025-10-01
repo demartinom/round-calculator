@@ -14,6 +14,7 @@ export const RestTime = ({ rest, updateRest }: RestTimeProps) => {
       onChange={(e) => updateRest(e.target.value)}
       value={rest}
       className="text-center"
+      type="tel"
     />
   );
 };
