@@ -39,8 +39,9 @@ function App() {
   };
 
   const results = roundTotals.map((roundTime, i) => (
-    <div>
-    </div>
+    <p key={i}>
+      Round {i + 1}: {roundTime}
+    </p>
   ));
   return (
     <div>
