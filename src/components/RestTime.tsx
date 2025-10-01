@@ -13,6 +13,7 @@ export const RestTime = ({ rest, updateRest }: RestTimeProps) => {
       placeholder="mm:ss"
       onChange={(e) => updateRest(e.target.value)}
       value={rest}
+      className="text-center"
     />
   );
 };

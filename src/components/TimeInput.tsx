@@ -12,6 +12,7 @@ export const RoundTime = ({ updateTime, index }: RoundTimeProps) => {
       replacement={{ _: /\d/ }}
       placeholder="mm:ss"
       onChange={(e) => updateTime(index, e.target.value)}
+      className="text-center text-xl"
     />
   );
 };

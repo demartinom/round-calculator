@@ -44,8 +44,8 @@ function App() {
     </p>
   ));
   return (
-    <div>
-      <p>How many rounds did you do?</p>
+    <div className="mt-4 flex flex-col items-center p-2 text-center">
+      <p className="text-center text-2xl">How many rounds did you do?</p>
       <input
         type="number"
         name="Rounds"
@@ -55,13 +55,18 @@ function App() {
         }}
         value={rounds}
         min={1}
+        className="text-center text-xl"
       />
-      <p>Enter your cumulative time after each round</p>
+      <p className="text-center text-2xl">
+        Enter your cumulative time after each round
+      </p>
       {Times}
-      <p>Update your rest time</p>
+      <p className="text-2xl">Update your rest time</p>
       <RestTime rest={restTime} updateRest={setRestTime} />
-      <button onClick={handleCalculate}>calculate</button>
-      {results}
+      <button className="rounded-2xl bg-gray-400 p-2" onClick={handleCalculate}>
+        calculate
+      </button>
+      <div className="text-start text-xl">{results}</div>
     </div>
   );
 }
