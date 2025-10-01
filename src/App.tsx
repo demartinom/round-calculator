@@ -40,7 +40,6 @@ function App() {
 
   const results = roundTotals.map((roundTime, i) => (
     <div>
-      Round{i + 1}: {roundTime}
     </div>
   ));
   return (
